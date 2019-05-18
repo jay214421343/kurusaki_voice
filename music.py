@@ -43,7 +43,7 @@ beforeOps = "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5"
 players={}
 
 
-async def background_player(msg,song):
+async def background_player(song,msg):
     voice_client = bot.voice_client_in(msg.message.server)
     song_pack = rq.get(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q={}&key={}".format(song, YOUTUBE_API)).json()
